@@ -1,0 +1,41 @@
+package ${package}.${moduleName};
+
+
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+import com.social.credits.finance.base.data.model.BaseModel;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+/**
+ *
+ * @author 代码生成器
+ * @Description ${comments}
+ * @date ${datetime}
+ */
+@EqualsAndHashCode(callSuper = true)
+@Entity
+@Data
+@Table(name = "${tableName}")
+@ApiModel("${comments}实体类")
+public class ${className} extends BaseModel {
+	private static final long serialVersionUID = 1L;
+#foreach ($column in $columns)
+
+#if($column.columnName != "id" && $column.columnName != "created_ts" && $column.columnName != "last_modified_ts")
+	/**
+ 	* $column.comments
+ 	*/
+	@ApiModelProperty("$column.comments")
+	@Column(name = "$column.columnName")
+	private $column.attrType $column.attrname;
+#end
+#end
+
+}

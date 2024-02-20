@@ -1,0 +1,15 @@
+package ${package}.${moduleName}.repo;
+
+
+import com.social.credits.data.model.${className};
+import com.social.credits.finance.base.data.repo.BaseRepo;
+
+/**
+ *
+ * @author 代码生成器
+ * @Description ${comments}
+ * @date ${datetime}
+ */
+public interface ${className}Repo extends BaseRepo<${className}> {
+
+}
