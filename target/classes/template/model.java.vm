@@ -1,4 +1,4 @@
-package ${package}.${moduleName};
+package ${package}.${moduleName}.model;
 
 
 #if(${hasBigDecimal})
@@ -28,7 +28,7 @@ public class ${className} extends BaseModel {
 	private static final long serialVersionUID = 1L;
 #foreach ($column in $columns)
 
-#if($column.columnName != "id" && $column.columnName != "created_ts" && $column.columnName != "last_modified_ts")
+#if($column.columnName != "ID" && $column.columnName != "CREATED_TS" && $column.columnName != "LAST_MODIFIED_TS")
 	/**
  	* $column.comments
  	*/
